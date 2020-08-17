@@ -4,6 +4,17 @@ def has_negatives(a):
     """
     # Your code here
 
+    cache = set()
+    result = []
+
+    for number in a:
+        if number < 0:
+            cache.add(abs(number))
+    
+    for number in a:
+        if number in cache and number >= 0:
+            result.append(number)
+  
     return result
 
 
