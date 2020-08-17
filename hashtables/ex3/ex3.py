@@ -4,6 +4,21 @@ def intersection(arrays):
     """
     # Your code here
 
+    cache = set()
+    intersects = []
+
+    for each in arrays:
+        for number in each:
+            if number not in cache:
+                cache.add(number)
+            else:
+                intersects.append(number)
+    
+    result = []
+    for index in intersects:
+        if index not in result:
+            result.append(index)
+
     return result
 
 
